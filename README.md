@@ -1,4 +1,4 @@
-# h2u
+# how 2 use
 
 ```
 Download as Zip, extract files from zip, plug in USB, add to USB
